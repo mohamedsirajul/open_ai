@@ -1,0 +1,22 @@
+<div class="chat-container" #chatContainer>
+    <div class="message" *ngFor="let msg of messages">
+      <div *ngIf="msg.sender === 'user'" class="message-wrapper user">
+        <div class="message-content">{{ msg.content }}</div>
+      </div>
+      <div *ngIf="msg.sender === 'bot'" class="message-wrapper bot">
+        <div class="message-content">{{ msg.content }}</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="box" [ngClass]="{'box': messages.length === 0}">
+    <div class="input-container">
+      <input type="text" [(ngModel)]="message" (keyup.enter)="sendMessage()" />
+      <div class="example-button-container">
+        <button mat-fab color="primary" (click)="sendMessage()" aria-label="Example icon button with a delete icon">
+          <mat-icon>send</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  
