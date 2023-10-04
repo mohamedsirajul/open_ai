@@ -30,12 +30,34 @@ import { MatMenuModule} from '@angular/material/menu';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
 import { ChatboxComponent } from './components/chatbox/chatbox.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthLayoutComponent } from './components/auth-layout/auth-layout.component';
+import { ToastrModule } from 'ngx-toastr';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { LoginComponent } from './components/sessions/login/login.component';
+import { RegisterComponent } from './components/sessions/register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { FirePredComponent } from './components/fire-pred/fire-pred.component';
+import { TreeCountComponent } from './components/tree-count/tree-count.component';
+
+// import { AgmCoreModule } from '@agm/core';
+// import { environment } from 'src/environments/environment';
+// import { environment } from 'src/environments/environment';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatboxComponent
+    ChatboxComponent,
+    DashboardComponent,
+    AuthLayoutComponent,
+    LoginComponent,
+    RegisterComponent,
+    SpinnerComponent,
+    FirePredComponent,
+    TreeCountComponent
   ],
   imports: [
     BrowserModule,
@@ -65,8 +87,17 @@ import { ChatboxComponent } from './components/chatbox/chatbox.component';
     MatExpansionModule,
     MatProgressBarModule,
     MatChipsModule,
+    BrowserAnimationsModule,
+    GoogleMapsModule,
+    
+
   ],
-  providers: [],
+  exports: [
+    ToastrModule,
+],
+  providers: [
+    {provide: LocationStrategy,useClass:HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

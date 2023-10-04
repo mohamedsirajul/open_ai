@@ -23,7 +23,10 @@ export class ChatboxComponent {
     }
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const body = { message: this.message };
+    const body = { message: this.message  };
+    console.log(body);
+    
+
     this.http.post<any>('http://127.0.0.1:5000/chat', body, { headers }).subscribe(
       (data) => {
         this.messages.push({ sender: 'user', content: this.message });
