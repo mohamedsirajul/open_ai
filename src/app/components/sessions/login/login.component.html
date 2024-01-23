@@ -58,7 +58,7 @@
             <i class="fa fa-user"></i>
             <input
               type="text"
-              placeholder="Email/MobileNumber"
+              placeholder="MobileNumber"
               class="input_text"
               formControlName="usersname"
               autocomplete="off" 
@@ -66,12 +66,12 @@
             />
           </div>
           <div *ngIf="reactiveForm?.get('usersname')?.hasError('required') && reactiveForm?.get('usersname')?.touched">
-            Please enter Mobile / Email
+            Please enter Mobile
           </div>
           <div class="input_group">
             <i class="fa fa-unlock-alt"></i>
             <input
-              placeholder="Password"
+              placeholder="Name"
               class="input_text"
               type="password" 
               formControlName="password" 

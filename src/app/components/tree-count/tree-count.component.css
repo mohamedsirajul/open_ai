@@ -1,0 +1,8 @@
+.center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This makes the button centered vertically on the screen */
+    width: 100%; /* This makes the button take the full width of its container */
+  }
+  

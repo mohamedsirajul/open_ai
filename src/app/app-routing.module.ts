@@ -8,6 +8,8 @@ import { RegisterComponent } from './components/sessions/register/register.compo
 import { AuthLayoutComponent } from './components/auth-layout/auth-layout.component';
 import { FirePredComponent } from './components/fire-pred/fire-pred.component';
 import { TreeCountComponent } from './components/tree-count/tree-count.component';
+import { VoteComponent } from './components/vote/vote.component';
+import { FaceRegComponent } from './components/face-reg/face-reg.component';
 
 
 const routes: Routes = [
@@ -19,11 +21,11 @@ const routes: Routes = [
   {
     path: 'auth',
     component: AuthLayoutComponent,
-    // children: [
-    //   { path: '', pathMatch: 'full', redirectTo: 'login' },
-    //   { path: 'login', component: LoginComponent },
-    //   { path: 'register', component: RegisterComponent },
-    // ],
+    children: [
+      { path: '', pathMatch: 'full', redirectTo: 'login' },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
+    ],
   },
   {
     path: 'dashboard',
@@ -31,13 +33,21 @@ const routes: Routes = [
     component: DashboardComponent 
    },
   { path: 'chatbox', 
+  // canActivate: [AuthGuard], 
   component: ChatboxComponent 
   },
   { path: 'fire_pred',
+  // canActivate: [AuthGuard], 
    component: FirePredComponent },
    { path: 'tree_pred',
+  //  canActivate: [AuthGuard], 
    component: TreeCountComponent },
-
+   { path: 'vote',
+  //  canActivate: [AuthGuard], 
+   component: VoteComponent },
+   { path: 'face',
+  //  canActivate: [AuthGuard], 
+   component: FaceRegComponent },
   // Add other routes or redirect to a 404 page if necessary
 ];
 

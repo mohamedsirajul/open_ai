@@ -1,7 +1,9 @@
+
 :host {
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-image: url("http://localhost:7870/assets/bg-chat.jpg");
   }
   
   .chat-container {

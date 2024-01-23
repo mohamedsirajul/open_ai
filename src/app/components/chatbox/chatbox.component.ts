@@ -21,7 +21,8 @@ export class ChatboxComponent {
     if (this.message.trim() === '') {
       return;
     }
-
+    console.log(this.messages);
+    
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = { message: this.message  };
     console.log(body);
@@ -31,8 +32,11 @@ export class ChatboxComponent {
       (data) => {
         this.messages.push({ sender: 'user', content: this.message });
         this.messages.push({ sender: 'bot', content: data.response });
+        // console.log(data.response);
+        
         this.message = '';
       },
+    
       (error) => {
         console.error(error);
         this.messages.push({ sender: 'user', content: this.message });

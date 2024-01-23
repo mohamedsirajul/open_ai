@@ -37,7 +37,6 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LoginComponent } from './components/sessions/login/login.component';
 import { RegisterComponent } from './components/sessions/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FirePredComponent } from './components/fire-pred/fire-pred.component';
 import { TreeCountComponent } from './components/tree-count/tree-count.component';
 
@@ -45,6 +44,8 @@ import { TreeCountComponent } from './components/tree-count/tree-count.component
 // import { environment } from 'src/environments/environment';
 // import { environment } from 'src/environments/environment';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { VoteComponent } from './components/vote/vote.component';
+import { FaceRegComponent } from './components/face-reg/face-reg.component';
 
 
 @NgModule({
@@ -55,9 +56,10 @@ import { GoogleMapsModule } from '@angular/google-maps';
     AuthLayoutComponent,
     LoginComponent,
     RegisterComponent,
-    SpinnerComponent,
     FirePredComponent,
-    TreeCountComponent
+    TreeCountComponent,
+    VoteComponent,
+    FaceRegComponent
   ],
   imports: [
     BrowserModule,

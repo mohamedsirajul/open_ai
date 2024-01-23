@@ -5,9 +5,10 @@
 <!-- </div> -->
 
 <div>
-  <p>Detection Status: {{ detectionStatus }}</p>
+  <h1>Detection Status: {{ detectionStatus }}</h1>
 </div>
 
-<button (click)="startFireDetection()">Start Fire Detection</button>
-<button (click)="stopFireDetection()">Stop Fire Detection</button>
+<button (click)="startFireDetection()" mat-raised-button color="primary">Start Fire Detection</button>
+<br>
+<button (click)="stopFireDetection()" mat-raised-button color="warn">Stop Fire Detection</button>
 

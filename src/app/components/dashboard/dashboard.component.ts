@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class DashboardComponent {
   dateTime=new Date();
   currentTime: any;
+  redirectURL: string | undefined;
 
   constructor() { }
 
@@ -16,5 +17,10 @@ export class DashboardComponent {
       this.currentTime = new Date();
     }, 1000);
   
+  }
+
+  about(){
+    this.redirectURL = "https://eci.gov.in/";
+    window.location.replace(this.redirectURL!);
   }
 }

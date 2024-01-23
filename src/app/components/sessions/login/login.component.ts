@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import { ToastrService, IndividualConfig } from 'ngx-toastr';
+// import { ToastrService, IndividualConfig } from 'ngx-toastr';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Router } from '@angular/router';
 import { SpinnerService } from 'src/app/services/spinner.service';
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthenticationService,
-    private toastr: ToastrService,
+    // private toastr: ToastrService,
     private router: Router,
     private spinnerService: SpinnerService,
 
@@ -69,24 +69,26 @@ export class LoginComponent implements OnInit {
           this.spinnerService.hideSpinner();
 
           if (response.authenticated) {
-            const toastConfig: Partial<IndividualConfig> = {
-              timeOut: 1500,
-              closeButton: true,
-              progressBar: true,
-              progressAnimation: 'decreasing'
-            };
-            const toastRef = this.toastr.success('Login successful!', 'Success', toastConfig);
-            toastRef.onHidden.subscribe(() => {
-              this.router.navigate(['/dashboard']);
-            });
+            // const toastConfig: Partial<IndividualConfig> = {
+            //   timeOut: 1500,
+            //   closeButton: true,
+            //   progressBar: true,
+            //   progressAnimation: 'decreasing'
+            // };
+            // const toastRef = this.toastr.success('Login successful!', 'Success', toastConfig);
+            // toastRef.onHidden.subscribe(() => {
+            //   this.router.navigate(['/dashboard']);
+            // });
+            this.router.navigate(['/dashboard']);
+
           } else {
-            const toastConfig: Partial<IndividualConfig> = {
-              timeOut: 1500,
-              closeButton: true,
-              progressBar: true,
-              progressAnimation: 'decreasing'
-            };
-            this.toastr.error(response.debug, 'Error', toastConfig);
+            // const toastConfig: Partial<IndividualConfig> = {
+            //   timeOut: 1500,
+            //   closeButton: true,
+            //   progressBar: true,
+            //   progressAnimation: 'decreasing'
+            // };
+            // this.toastr.error(response.debug, 'Error', toastConfig);
             this.spinnerService.hideSpinner();
             console.log('Authentication failed:', response.debug);
           }
@@ -96,13 +98,13 @@ export class LoginComponent implements OnInit {
           // Handle the login error
 
           this.authService.handleLoginError(error);
-          const toastConfig: Partial<IndividualConfig> = {
-            timeOut: 1500,
-            closeButton: true,
-            progressBar: true,
-            progressAnimation: 'decreasing'
-          };
-          const toastRef = this.toastr.error(error.message, 'Error', toastConfig);
+          // const toastConfig: Partial<IndividualConfig> = {
+          //   timeOut: 1500,
+          //   closeButton: true,
+          //   progressBar: true,
+          //   progressAnimation: 'decreasing'
+          // };
+          // const toastRef = this.toastr.error(error.message, 'Error', toastConfig);
           console.log(error);
           this.spinnerService.hideSpinner();
         }
@@ -114,13 +116,13 @@ export class LoginComponent implements OnInit {
       // Form validation failed
       // console.log('Invalid form');
       this.spinnerService.hideSpinner();
-      const toastConfig: Partial<IndividualConfig> = {
-        timeOut: 1500,
-        closeButton: true,
-        progressBar: true,
-        progressAnimation: 'decreasing'
-      };
-      const toastRef = this.toastr.error('Invalid Form!', 'Error', toastConfig);
+      // const toastConfig: Partial<IndividualConfig> = {
+      //   timeOut: 1500,
+      //   closeButton: true,
+      //   progressBar: true,
+      //   progressAnimation: 'decreasing'
+      // };
+      // const toastRef = this.toastr.error('Invalid Form!', 'Error', toastConfig);
 
     }
     this.form_status = false;
